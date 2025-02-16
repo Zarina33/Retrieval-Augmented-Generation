@@ -1,7 +1,7 @@
 from sqlalchemy import Column, Integer, String, DateTime, ForeignKey, Float, Text
 from sqlalchemy.orm import relationship
 from .database import Base
-import datetime
+from datetime import datetime
 
 class File(Base):
     __tablename__ = "files"
@@ -9,7 +9,7 @@ class File(Base):
     id = Column(Integer, primary_key=True, index=True)
     filename = Column(String, nullable=False)
     file_type = Column(String)
-    upload_date = Column(DateTime, default=datetime.datetime.utcnow)
+    upload_date = Column(DateTime, default=datetime.utcnow)
     chunks = relationship("FileChunk", back_populates="file")
 
 class FileChunk(Base):
