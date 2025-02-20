@@ -39,3 +39,4 @@ CREATE TABLE query_chunks (
 -- Индексы
 CREATE INDEX idx_file_chunks_file_id ON file_chunks(file_id);
 CREATE INDEX idx_queries_file_id ON queries(file_id);
+DROP TABLE IF EXISTS files CASCADE;
